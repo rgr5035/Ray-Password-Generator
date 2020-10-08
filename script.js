@@ -11,6 +11,7 @@ var confirmSpecial;
 //declaring variable arrays of available characters that will produce within password
 
 var chosenCharacters = [];
+var password = "";
 
 var alphabet = [
   "a",
@@ -56,7 +57,8 @@ function generatePassword() {
   var confirmSpecial = confirm("Would you like to include special characters?");
   console.log(chosenCharacters);
 
-  if (enterLength <= 8 && enterLength <= 128) {
+  //Because using a prompt, we generate a string, so parseInt will change this to numeric
+  if (parseInt(enterLength) >= 8 && parseInt(enterLength) <= 128) {
     //This will take alphabet and chosenCharacters together and will return one array
     if (confirmLower) {
       chosenCharacters = chosenCharacters.concat(alphabet);
@@ -75,6 +77,19 @@ function generatePassword() {
     }
 
     console.log(chosenCharacters);
+
+    //For Loop here
+    for (var i = 0; i < parseInt(enterLength); i++) {
+      //creates the length of the desired password that the user entered
+      console.log(i);
+      var randomIndex = Math.floor(Math.random() * chosenCharacters.length);
+      console.log(randomIndex);
+      var randomChar = chosenCharacters[randomIndex];
+      console.log(randomChar);
+      //concatenation of two variables together and saving back to password
+      password = password + randomChar;
+    }
+    return password;
   } else {
     return;
   }
