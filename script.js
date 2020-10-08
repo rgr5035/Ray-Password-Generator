@@ -49,16 +49,27 @@ function generatePassword() {
   var confirmUpper = confirm("would you like upper-case characters?");
   var confirmNumber = confirm("Would you like to include numbers?");
   var confirmSpecial = confirm("Would you like to include special characters?");
+
+  if (enterLength >= 8 && enterLength <= 128) {
+    return generatePassword();
+  } else {
+    prompt("Please choose a correct number.");
+  }
+
+  //variables to store password and specified characters
+  // var password = [];
+  // var generateRandomFunctions = [];
+
+  // //For loop here
+  //   for (var i = 1; i < enterLength; i++) {
+  //   var randomFunctionindex =
+  //     Math.floor(math.random() * generatePasswordFunctions.length) - 1;
+  //   var randomFunction = generateRandomFunctions[randomFunctionindex];
+  //   var randomCharacter = randomFunction();
+
+  //   //pushes password
+  //   password.push(randomCharacter);
 }
-
-if (enterLength >= 8 || enterLength <= 128) {
-}
-
-//variables to store password and specified characters
-var password = [];
-var generateRandomFunctions = [];
-
-//For loop here
 
 // Write password to the #password input
 function writePassword() {
