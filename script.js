@@ -9,6 +9,9 @@ var confirmNumber;
 var confirmSpecial;
 
 //declaring variable arrays of available characters that will produce within password
+
+var chosenCharacters = [];
+
 var alphabet = [
   "a",
   "b",
@@ -38,6 +41,8 @@ var alphabet = [
   "z",
 ];
 
+var alphabetUpper = ["A", "B"];
+
 var number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
 var special = ["!", "&", "#", "+", "/", "-", "$", "@", "*", "%"];
@@ -49,26 +54,30 @@ function generatePassword() {
   var confirmUpper = confirm("would you like upper-case characters?");
   var confirmNumber = confirm("Would you like to include numbers?");
   var confirmSpecial = confirm("Would you like to include special characters?");
+  console.log(chosenCharacters);
 
-  if (enterLength >= 8 && enterLength <= 128) {
-    return generatePassword();
+  if (enterLength <= 8 && enterLength <= 128) {
+    //This will take alphabet and chosenCharacters together and will return one array
+    if (confirmLower) {
+      chosenCharacters = chosenCharacters.concat(alphabet);
+    }
+
+    if (confirmUpper) {
+      chosenCharacters = chosenCharacters.concat(alphabetUpper);
+    }
+
+    if (confirmNumber) {
+      chosenCharacters = chosenCharacters.concat(number);
+    }
+
+    if (confirmSpecial) {
+      chosenCharacters = chosenCharacters.concat(special);
+    }
+
+    console.log(chosenCharacters);
   } else {
-    prompt("Please choose a correct number.");
+    return;
   }
-
-  //variables to store password and specified characters
-  // var password = [];
-  // var generateRandomFunctions = [];
-
-  // //For loop here
-  //   for (var i = 1; i < enterLength; i++) {
-  //   var randomFunctionindex =
-  //     Math.floor(math.random() * generatePasswordFunctions.length) - 1;
-  //   var randomFunction = generateRandomFunctions[randomFunctionindex];
-  //   var randomCharacter = randomFunction();
-
-  //   //pushes password
-  //   password.push(randomCharacter);
 }
 
 // Write password to the #password input
