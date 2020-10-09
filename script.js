@@ -91,6 +91,7 @@ function generatePassword() {
   //Because using a prompt, we generate a string, so parseInt will change this to numeric
   if (parseInt(enterLength) >= 8 && parseInt(enterLength) <= 128) {
     //This will take alphabet and chosenCharacters together and will return one array
+
     if (confirmLower) {
       chosenCharacters = chosenCharacters.concat(alphabet);
     }
@@ -124,6 +125,7 @@ function generatePassword() {
     }
     return password;
   } else {
+    alert("Please choose a correct number value!");
     return;
   }
 }
