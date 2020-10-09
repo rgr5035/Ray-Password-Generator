@@ -42,7 +42,34 @@ var alphabet = [
   "z",
 ];
 
-var alphabetUpper = ["A", "B"];
+var alphabetUpper = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];
 
 var number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
@@ -51,8 +78,12 @@ var special = ["!", "&", "#", "+", "/", "-", "$", "@", "*", "%"];
 //activates the various prompts after 'generate password' button is pressed
 function generatePassword() {
   var enterLength = prompt("Please choose from 8 to 128 characters.");
-  var confirmLower = confirm("Would you like lower-case characters?");
-  var confirmUpper = confirm("would you like upper-case characters?");
+  var confirmLower = confirm(
+    "Would you like to include lower-case characters?"
+  );
+  var confirmUpper = confirm(
+    "would you like to include upper-case characters?"
+  );
   var confirmNumber = confirm("Would you like to include numbers?");
   var confirmSpecial = confirm("Would you like to include special characters?");
   console.log(chosenCharacters);
@@ -83,6 +114,8 @@ function generatePassword() {
       //creates the length of the desired password that the user entered
       console.log(i);
       var randomIndex = Math.floor(Math.random() * chosenCharacters.length);
+
+      //declares the random characters that the user chose to add to the random desired length of the password
       console.log(randomIndex);
       var randomChar = chosenCharacters[randomIndex];
       console.log(randomChar);
