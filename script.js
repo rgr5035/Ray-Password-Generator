@@ -8,11 +8,11 @@ var confirmUpper;
 var confirmNumber;
 var confirmSpecial;
 
-//declaring variable arrays of available characters that will produce within password
-
+//NEED NOTES HERE!!!!
 var chosenCharacters = [];
 var password = "";
 
+//declares variable array of lowercase characters to store in global memory to be used in password generation
 var alphabet = [
   "a",
   "b",
@@ -42,6 +42,7 @@ var alphabet = [
   "z",
 ];
 
+//delcares variable array of uppercase characters to store in global memory to be used in password generation
 var alphabetUpper = [
   "A",
   "B",
@@ -71,11 +72,13 @@ var alphabetUpper = [
   "Z",
 ];
 
+//delcares variable array of numeric characters to store in global memory to be used in password generation
 var number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
+//delcares variable array of special characters to store in global memory to be used in password generation
 var special = ["!", "&", "#", "+", "/", "-", "$", "@", "*", "%"];
 
-//activates the various prompts after 'generate password' button is pressed
+//activates code blocks for the various prompts and confirms after 'generate password' button is pressed
 function generatePassword() {
   var enterLength = prompt("Please choose from 8 to 128 characters.");
   var confirmLower = confirm(
@@ -90,8 +93,7 @@ function generatePassword() {
 
   //Because using a prompt, we generate a string, so parseInt will change this to numeric
   if (parseInt(enterLength) >= 8 && parseInt(enterLength) <= 128) {
-    //This will take alphabet and chosenCharacters together and will return one array
-
+    //The concat method will take desired variables (if truthy) and chosenCharacters together and will return one array
     if (confirmLower) {
       chosenCharacters = chosenCharacters.concat(alphabet);
     }
@@ -124,6 +126,7 @@ function generatePassword() {
       password = password + randomChar;
     }
     return password;
+    //if the entered numeric value of the password is falsy, then the following alert will show, taking the user back to the start to choose the correct value
   } else {
     alert("Please choose a correct number value!");
     return;
