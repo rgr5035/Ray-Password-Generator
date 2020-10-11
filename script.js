@@ -8,8 +8,10 @@ var confirmUpper;
 var confirmNumber;
 var confirmSpecial;
 
-//NEED NOTES HERE!!!!
+//This is the overall array that will pull from all other arrays in global memory when password is generated
 var chosenCharacters = [];
+
+//When the password is generated, this will generate it as a string (maybe)
 var password = "";
 
 //declares variable array of lowercase characters to store in global memory to be used in password generation
