@@ -11,7 +11,7 @@ var confirmSpecial;
 //This is the overall array that will pull from all other arrays in global memory when password is generated
 var chosenCharacters = [];
 
-//When the password is generated, this will generate it as a string (maybe)
+//When the password is generated, this will generate it as a string
 var password = "";
 
 //declares variable array of lowercase characters to store in global memory to be used in password generation
@@ -91,7 +91,7 @@ function generatePassword() {
   );
   var confirmNumber = confirm("Would you like to include numbers?");
   var confirmSpecial = confirm("Would you like to include special characters?");
-  console.log(chosenCharacters);
+ 
 
   //Because using a prompt, we generate a string, so parseInt will change this to numeric
   if (parseInt(enterLength) >= 8 && parseInt(enterLength) <= 128) {
@@ -112,18 +112,17 @@ function generatePassword() {
       chosenCharacters = chosenCharacters.concat(special);
     }
 
-    console.log(chosenCharacters);
 
     //For Loop here
     for (var i = 0; i < parseInt(enterLength); i++) {
       //creates the length of the desired password that the user entered
-      console.log(i);
+      
       var randomIndex = Math.floor(Math.random() * chosenCharacters.length);
 
       //declares the random characters that the user chose to add to the random desired length of the password
-      console.log(randomIndex);
+      
       var randomChar = chosenCharacters[randomIndex];
-      console.log(randomChar);
+     
       //concatenation of two variables together and saving back to password
       password = password + randomChar;
     }
