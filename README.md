@@ -7,3 +7,5 @@ Assignment Overview
 Prompts/Confirms
 
     The user is prompted to input the desired length of the password, between 8 - 128 characters. The user is then asked if they would like to include lowercase, uppercase, numbers and special characters. Once these are all answered, the desired combination will generate within the text box. These are determined by various if/else statements within the JS file, along with a for loop to mathematically generate the desired length, and then concatenates the various characters that were determined as either truthy or falsy statements in the confirm messages. At the end of the function, if the original desired length is entered incorrectly, then an alert will tell the user to choose the correct numeric value (8 -128 characters), and will take the user back to the beginning of the prompts and confirms.
+
+Screenshot: ![image](https://user-images.githubusercontent.com/70773240/95790911-84106d80-0c9d-11eb-9fe7-bf049fad46d0.png)
